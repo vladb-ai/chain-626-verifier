@@ -1,0 +1,18 @@
+{
+  "name": "chain-626-verifier",
+  "version": "1.0.0",
+  "private": true,
+  "description": "On-chain verifier for ZKsync OS v30.1 chain 626 (Ethereum mainnet)",
+  "scripts": {
+    "verify": "ts-node --transpile-only verify.ts",
+    "verify:state-only": "STATE_ONLY=1 ts-node --transpile-only verify.ts"
+  },
+  "dependencies": {
+    "ethers": "^5.7.2"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.0",
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0"
+  }
+}
