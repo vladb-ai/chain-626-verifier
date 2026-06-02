@@ -74,7 +74,7 @@ to the canonical ZKsync Era mainnet ecosystem (modulo immutables). ZKsync OS con
 - Commit (committer): `0x420c3d089Be4636949c6d4cc31E4b25254336b8c`
 - Prove (prover): `0x941c6dC100007e9B9A942B78A233265d1BA57b82`
 - Execute (executor): `0x805d4940e74f88fc30f032B1494609bd48A6c9a5`
-- Eth-path / revert (precommitter + reverter + upgrader): `0xdf79BFf352aa092378757BC76D7333F5150fa11e`
+- Reverter (only): `0xdf79BFf352aa092378757BC76D7333F5150fa11e`  *(precommitter/prover/executor roles revoked 2026-06-02, tx 0xf3ee7dc1)*
 
 ## DA validator pair on chain 626
 
