@@ -59,7 +59,7 @@ to the canonical ZKsync Era mainnet ecosystem (modulo immutables). ZKsync OS con
 
 - Rollup DA Manager: `0x1b60B98612163e47BFD038F11e79Cad235500581`
 - Rollup L1 DA Validator: `0x97e74A3096Ee3CcA37E3cCFE273a24c0fA7aa0e2`
-- Blobs ZKsync OS L1 DA Validator (used by chain 626): `0x3E976F63373059C4CeBEad1dee0dEF4866018E4d`
+- Blobs ZKsync OS L1 DA Validator (used by chain 626): `0x3368766f6d565f14eA0cFd71236999d6c93fbDbE`
 - No-DA Validium L1 Validator: `0xd34A96d51a580479a348177A7214eC7b63a77AaF`
 - Avail L1 DA Validator: `0x7360DbD9EfA28b26b83473D3e7C226ba57E87024`
 
@@ -78,7 +78,7 @@ to the canonical ZKsync Era mainnet ecosystem (modulo immutables). ZKsync OS con
 
 ## DA validator pair on chain 626
 
-- L1 DA validator: `0x3E976F63373059C4CeBEad1dee0dEF4866018E4d` (BlobsL1DAValidatorZKsyncOS)
+- L1 DA validator: `0x3368766f6d565f14eA0cFd71236999d6c93fbDbE` (BlobsL1DAValidatorZKsyncOS)
 - L2 DA commitment scheme: `BLOBS_ZKSYNC_OS` (enum value 4)
 
 ## Ownership handoff status

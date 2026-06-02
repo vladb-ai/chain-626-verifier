@@ -47,7 +47,7 @@ const OURS = {
   ExecutorFacet: "0x7C5a5c115b009fE104b9cc2a79352b1F34492993",
   MailboxFacet:  "0x3D04e3fa2815A469d7dD40F13627e3DfA6137689",
   GettersFacet:  "0xc2179C5f354c5c075C9d864AA2a775d24db26b5a",
-  BlobsDA:       "0x3E976F63373059C4CeBEad1dee0dEF4866018E4d",
+  BlobsDA:       "0x3368766f6d565f14eA0cFd71236999d6c93fbDbE",
 };
 
 // ---------------- canonical ZKsync Era ecosystem (Ethereum mainnet) ----------------
