@@ -83,14 +83,17 @@ to the canonical ZKsync Era mainnet ecosystem (modulo immutables). ZKsync OS con
 
 ## Ownership handoff status
 
-`transferOwnership` initiated by the deployer for the 6 deployer-owned contracts.
-**Real owners must call `acceptOwnership()` to complete the 2-step transfer.**
+All ecosystem-level contracts are now owned by **Governance** (`0x6145cb32…`),
+which is itself pending transfer to the real ecosystem owner. After 2026-06-03
+re-routing, the topology mirrors canonical ZKsync Era: a single Governance
+contract owns everything, so the real owner needs only **2** `acceptOwnership()`
+calls to take full control:
 
-- `0x4e4943346848c4867F81dFb37c4cA9C5715A7828` (final ecosystem owner) — pending owner of:
-  - Governance, ecosystem ChainAdmin, L1Nullifier, ValidatorTimelock, Verifier
-- `0xc177aC25a1c9aFF16F1cE8cde99187Ed391C58f3` (final chain admin) — pending owner of:
-  - chain 626 ChainAdmin
-
-L1NativeTokenVault, ChainAssetHandler, ChainTypeManager, RollupDAManager, BridgeHub,
-L1AssetRouter, CTMDeploymentTracker are owned by Governance — once the real owner
-accepts Governance, they're controlled transitively.
+- `0x4e4943346848c4867F81dFb37c4cA9C5715A7828` (final ecosystem owner) must
+  `acceptOwnership()` on **Governance** (`0x6145cb32…`). Once accepted, this
+  single contract transitively controls: BridgeHub, L1AssetRouter, L1Nullifier,
+  L1NativeTokenVault, L1ERC20Bridge, MessageRoot, CTMDeploymentTracker,
+  ChainAssetHandler, ChainTypeManager, ValidatorTimelock, Verifier, RollupDAManager,
+  and the ecosystem ChainAdmin.
+- `0xc177aC25a1c9aFF16F1cE8cde99187Ed391C58f3` (final chain admin) must
+  `acceptOwnership()` on **chain 626 ChainAdmin** (`0x353c39d0…`).
