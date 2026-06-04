@@ -15,6 +15,18 @@ to the canonical ZKsync Era mainnet ecosystem (modulo immutables). ZKsync OS con
 - CREATE2 factory (canonical): `0x4e59b44847b379578588920cA78FbF26c0B4956C`
 - Multicall3 (canonical): `0xcA11bde05977b3631167028862bE2a173976CA11`
 
+## Proxy admins
+
+- **Main ProxyAdmin**: `0x31b477779cfdf178b618c0517d75ab42fcbef691` (owner = Governance) —
+  used by every ecosystem proxy *except* ServerNotifier (BridgeHub, MessageRoot,
+  AssetRouter, L1Nullifier, L1ERC20Bridge, L1NTV, CTMDeploymentTracker,
+  ChainAssetHandler, ChainTypeManager, ValidatorTimelock).
+- **ServerNotifier ProxyAdmin**: `0x336a2d234b2f1d195f68faaa129584097d0c5c34`
+  (owner = ecosystem ChainAdmin). Separate by **design** — `DeployCTM` deploys a
+  dedicated ProxyAdmin owned by the ecosystem ChainAdmin (and likewise transfers
+  the ServerNotifier proxy's owner to the ChainAdmin), because server-migration
+  notifications are operational-level (chain admin), not governance-level.
+
 ## Ecosystem (BridgeHub + governance)
 
 - BridgeHub (proxy): `0x6f85C08e2DabB6b0B8B3587D3628FCfb5b10BE19`
@@ -66,8 +78,9 @@ to the canonical ZKsync Era mainnet ecosystem (modulo immutables). ZKsync OS con
 ## Chain 626
 
 - Diamond proxy (the chain): `0xB44d26D227e0bD028d893BEc16DC1C7B168eCdE3`
-- Chain Admin: `0x353c39d02efb034BF92b580CbEe79314166ED7eA`
-- Chain Governance: `0x9d1c800574557dBFE23A15eBefb40207a38d33cf`
+- Chain Admin: `0x353c39d02efb034BF92b580CbEe79314166ED7eA` — pending owner `0xc177aC25…`
+- Chain Governance: `0x9d1c800574557dBFE23A15eBefb40207a38d33cf` — pending owner `0xc177aC25…` (transferOwnership initiated 2026-06-04)
+- ChainTypeManager admin (operational admin, distinct from owner): `0xbc8e06ABa0ef1cE015A5d9207b61B470D751404b` (= ecosystem ChainAdmin; accepted 2026-06-04)
 
 ## Validator operators (configured on chain 626 via ValidatorTimelock)
 
@@ -96,4 +109,5 @@ calls to take full control:
   ChainAssetHandler, ChainTypeManager, ValidatorTimelock, Verifier, RollupDAManager,
   and the ecosystem ChainAdmin.
 - `0xc177aC25a1c9aFF16F1cE8cde99187Ed391C58f3` (final chain admin) must
-  `acceptOwnership()` on **chain 626 ChainAdmin** (`0x353c39d0…`).
+  `acceptOwnership()` on **chain 626 ChainAdmin** (`0x353c39d0…`) and on
+  **chain 626 Governance** (`0x9d1c8005…`).
